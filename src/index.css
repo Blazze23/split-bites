@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;700&family=Quicksand:wght@300;400;500;700&family=Roboto:wght@100;300;500;700&display=swap");
+
+:root {
+  --color-primary: #ff6b6b;
+  --color-secondary: #ffd166;
+  --color-accent: #4ecdc4;
+  --color-text: #333333;
+  --color-background: #f4f4f4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h4,
+h5,
+h6,
+button {
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  height: 100vh;
+  color: var(--color-text);
+}
+
+header {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+header p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.5rem;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.button {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  padding: 0.7rem 1.125rem;
+  border: none;
+  border-radius: 7px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 10px;
+}
+
+.button:hover {
+  background-color: hsl(176, 56%, 40%);
+}
+
+.remove {
+  background: hsl(0, 100%, 78%);
+}
+
+.remove:hover {
+  background: hsl(0, 100%, 70%);
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar li {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr auto;
+  align-items: center;
+  column-gap: 1.5rem;
+  padding: 1rem;
+  transition: 0.5s;
+}
+
+.selected,
+.sidebar li:hover {
+  background-color: hsl(42, 100%, 85%);
+}
+
+.sidebar li img {
+  border-radius: 50%;
+  width: 100%;
+  grid-row: span 2;
+}
+
+.sidebar li h3 {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.sidebar li p {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.sidebar li .button {
+  grid-row: span 1;
+  grid-column: 3;
+}
+
+.sidebar li .button:first-of-type {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar > .button {
+  float: right;
+  margin-right: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.green,
+.red,
+.even {
+  font-size: 16px;
+  font-family: "Inconsolata", monospace;
+}
+
+.green {
+  color: #4ecdc4;
+}
+
+.red {
+  color: #ff6b6b;
+}
+
+form {
+  display: grid;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: var(--color-secondary);
+}
+
+.form-add-friend {
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1.6rem;
+  padding: 1.5rem;
+}
+
+.form-split-bill {
+  grid-template-columns: 1fr 1fr;
+  padding: 1.5rem 2rem;
+}
+
+label {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+input,
+select {
+  font-family: inherit;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+  outline: 1.7px solid var(--color-accent);
+}
+
+form .button {
+  margin-top: 0.6rem;
+  grid-column: 2;
+}
+
+form h2 {
+  grid-column: 1 / -1;
+  font-size: 1.45rem;
+  margin-bottom: 1.6rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media screen and (min-width: 400px) {
+  .sidebar li {
+    border-radius: 7px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  form {
+    border-radius: 7px;
+  }
+  .form-split-bill {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 675px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+  header p {
+    font-size: 1.8rem;
+  }
+  .sidebar ul {
+    font-size: 1.4rem;
+  }
+  .sidebar li {
+    grid-template-columns: 4.2rem 1fr auto;
+  }
+  .green,
+  .red,
+  .even {
+    font-size: 20px;
+  }
+  .button {
+    font-size: 0.8rem;
+  }
+  form h2 {
+    font-size: 1.6rem;
+  }
+  form label {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    align-items: start;
+    gap: 2rem;
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .form-split-bill {
+    padding: 0.7rem;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  .sidebar ul {
+    font-size: 1rem;
+  }
+  .green,
+  .red,
+  .even {
+    font-size: 0.8rem;
+  }
+  .button {
+    font-size: 0.6rem;
+  }
+  form h2 {
+    font-size: 1.2rem;
+  }
+  form label {
+    font-size: 0.8rem;
+  }
+  form input,
+  select {
+    font-size: 0.8rem;
+  }
+}
